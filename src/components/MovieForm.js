@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { handleSubmit } from "../api/Api";
 import Sidebar from "./sidebar";
+import MyDatePicker from "./mydatePicker";
 const FormWrapper = styled.div`
   max-width: 400px;
   margin: 0 auto;
@@ -37,6 +38,7 @@ const MovieForm = () => {
     duration: "",
     budget: "",
   });
+  const [date, setDate] = useState();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,8 +53,13 @@ const MovieForm = () => {
     }
   };
 
+  const handleDateChange = (date) => {
+    setDate(date);
+  };
+
   return (
     <div>
+      <h1 className="header">Agregar pelicula</h1>
       <FormWrapper>
         <FormField>
           <Label>Nombre:</Label>
@@ -65,13 +72,17 @@ const MovieForm = () => {
         </FormField>
 
         <FormField>
-          <Label>Fecha de estreno:</Label>
+          <Label>Imagen:</Label>
           <Input
-            type="text"
-            name="date"
-            value={formData.date}
+            type="file"
+            name="img"
+            value={formData.name}
             onChange={handleChange}
           />
+        </FormField>
+
+        <FormField>
+          <MyDatePicker setData={handleDateChange} />
         </FormField>
 
         <FormField>

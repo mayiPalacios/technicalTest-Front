@@ -32,27 +32,38 @@ const Sidebar = (props) => {
               {option &&
                 option.map((op) => (
                   <li className="nav-item">
-                    <a href="#" className="nav-link align-middle px-0">
-                      {op.name === "formulario" ? (
+                    {op.name === "formulario" ? (
+                      <a href="/form" className="nav-link align-middle px-0">
                         <i className="fs-4 bi bi-file-earmark-text"></i>
-                      ) : (
-                        ""
-                      )}
+                        <span className="ms-1 d-none d-sm-inline">
+                          {op.name}
+                        </span>
+                      </a>
+                    ) : (
+                      ""
+                    )}
 
-                      {op.name === "administrar opciones" ? (
+                    {op.name === "administrar opciones" ? (
+                      <a href="/admi" className="nav-link align-middle px-0">
                         <i className="fs-4 bi bi-gear"></i>
-                      ) : (
-                        ""
-                      )}
+                        <span className="ms-1 d-none d-sm-inline">
+                          {op.name}
+                        </span>
+                      </a>
+                    ) : (
+                      ""
+                    )}
 
-                      {op.name === "listado de peliculas" ? (
+                    {op.name === "listado de peliculas" ? (
+                      <a href="/Movies" className="nav-link align-middle px-0">
                         <i className="fs-4 bi bi-film"></i>
-                      ) : (
-                        ""
-                      )}
-
-                      <span className="ms-1 d-none d-sm-inline">{op.name}</span>
-                    </a>
+                        <span className="ms-1 d-none d-sm-inline">
+                          {op.name}
+                        </span>
+                      </a>
+                    ) : (
+                      ""
+                    )}
                   </li>
                 ))}
             </ul>
