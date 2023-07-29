@@ -63,6 +63,7 @@ const MovieForm = () => {
             onChange={handleChange}
           />
         </FormField>
+
         <FormField>
           <Label>Fecha de estreno:</Label>
           <Input
@@ -72,6 +73,7 @@ const MovieForm = () => {
             onChange={handleChange}
           />
         </FormField>
+
         <FormField>
           <Label>Duración (minutos):</Label>
           <Input
@@ -81,6 +83,7 @@ const MovieForm = () => {
             onChange={handleChange}
           />
         </FormField>
+
         <FormField>
           <Label>Presupuesto:</Label>
           <Input
