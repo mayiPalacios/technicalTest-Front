@@ -8,9 +8,9 @@ export const handleSubmit = async (formData) => {
         "Content-Type": "multipart/form-data",
       },
     });
-    const data = await response.json();
-    console.log("Data sent successfully:", data);
-    return data;
+
+    console.log("Data sent successfully:", response.data);
+    return true;
   } catch (error) {
     console.error("Error sending data:", error);
     throw error;
