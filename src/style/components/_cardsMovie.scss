@@ -1,0 +1,21 @@
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.container__movies {
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  transition: box-shadow 0.3s ease;
+}
+
+/* Estilo cuando se toca (hover) */
+.card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transform: translateY(-4px);
+}

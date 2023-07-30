@@ -73,11 +73,12 @@ const MovieForm = () => {
   const handleDateChange = (date) => {
     setDate(date);
     setFormData({ ...formData, date: datee });
+    setFormData({ ...formData, id: uuidv4() });
   };
 
   return (
     <div>
-      <div className="card">
+      <div className="card__form">
         <div className="card-body">
           <h1 className="header">Agregar pelicula</h1>
           <FormWrapper>
