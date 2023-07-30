@@ -1,0 +1,46 @@
+.switch {
+  display: inline-block;
+  position: relative;
+  width: 60px;
+  height: 30px;
+  background-color: #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 26px;
+    height: 26px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s;
+  }
+}
+
+.switch.on {
+  background-color: #007bff;
+
+  &::after {
+    transform: translateX(30px);
+  }
+}
+
+.card__admi {
+  width: 20%;
+  background-color: var(--color);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  margin: 2rem;
+  padding: 1.6em 2.3em;
+  overflow: hidden;
+  max-width: 90rem;
+  min-width: 20rem;
+  background-color: #fff;
+  min-height: 15rem;
+  height: auto;
+  display: grid;
+  gap: 2.5em;
+}

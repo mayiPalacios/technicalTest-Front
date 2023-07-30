@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { handleSubmit } from "../api/Api";
 import { v4 as uuidv4 } from "uuid";
@@ -56,11 +56,20 @@ const MovieForm = () => {
     setFormData({ ...formData, secure__url_img: selectedFile });
   };
 
+  useEffect(() => {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      date: datee,
+    }));
+  }, [datee]);
+
   const handleFormSubmit = async () => {
+    console.log(formData.date);
+
     try {
-      setLoading(true);
       setFormData({ ...formData, id: uuidv4() });
-      setFormData({ ...formData, date: datee });
+
+      setLoading(true);
 
       const form = new FormData();
       form.append("id", formData.id);
@@ -95,7 +104,7 @@ const MovieForm = () => {
 
   const handleDateChange = (date) => {
     setDate(date);
-    setFormData({ ...formData, date: datee });
+
     setFormData({ ...formData, id: uuidv4() });
   };
 
