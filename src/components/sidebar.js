@@ -5,6 +5,9 @@ const Sidebar = (props) => {
   const Component = props.component;
   const [option, setOption] = useState([]);
 
+  const isOn = localStorage.getItem("adListToken");
+  const isOnForm = localStorage.getItem("adFormToken");
+
   useEffect(() => {
     const fetchData = async () => {
       const request = await getOptions();
@@ -21,7 +24,7 @@ const Sidebar = (props) => {
           <div className="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100">
             <a
               href="/"
-              className="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+              className="d-flex n-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
             >
               <span className="fs-5 d-none d-sm-inline">Menu</span>
             </a>
@@ -32,13 +35,17 @@ const Sidebar = (props) => {
               {option &&
                 option.map((op) => (
                   <li className="nav-item">
-                    {op.name === "formulario" ? (
-                      <a href="/form" className="nav-link align-middle px-0">
-                        <i className="fs-4 bi bi-file-earmark-text"></i>
-                        <span className="ms-1 d-none d-sm-inline">
-                          {op.name}
-                        </span>
-                      </a>
+                    {!isOnForm ? (
+                      op.name === "formulario" ? (
+                        <a href="/form" className="nav-link align-middle px-0">
+                          <i className="fs-4 bi bi-file-earmark-text"></i>
+                          <span className="ms-1 d-none d-sm-inline">
+                            {op.name}
+                          </span>
+                        </a>
+                      ) : (
+                        ""
+                      )
                     ) : (
                       ""
                     )}
@@ -53,14 +60,20 @@ const Sidebar = (props) => {
                     ) : (
                       ""
                     )}
-
-                    {op.name === "listado de peliculas" ? (
-                      <a href="/Movies" className="nav-link align-middle px-0">
-                        <i className="fs-4 bi bi-film"></i>
-                        <span className="ms-1 d-none d-sm-inline">
-                          {op.name}
-                        </span>
-                      </a>
+                    {!isOn ? (
+                      op.name === "listado de peliculas" ? (
+                        <a
+                          href="/Movies"
+                          className="nav-link align-middle px-0"
+                        >
+                          <i className="fs-4 bi bi-film"></i>
+                          <span className="ms-1 d-none d-sm-inline">
+                            {op.name}
+                          </span>
+                        </a>
+                      ) : (
+                        ""
+                      )
                     ) : (
                       ""
                     )}
