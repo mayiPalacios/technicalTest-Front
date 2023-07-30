@@ -14,3 +14,19 @@ label {
   padding: 8px;
   border: 1px solid #ccc;
 }
+
+.card {
+  width: 100%;
+  background-color: var(--color);
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  margin: 2rem;
+  padding: 1.6em 2.3em;
+  overflow: hidden;
+  max-width: 90rem;
+  width: auto;
+  min-height: 50rem;
+  height: auto;
+  display: grid;
+  gap: 2.5em;
+}
