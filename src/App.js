@@ -1,11 +1,18 @@
-import './App.css';
-import MovieForm from "./components/MovieForm";
+import "./App.css";
+import MovieFormPage from "./page/MovieFormPage";
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import MovieListPage from "./page/MovieListPage";
 
 function App() {
   return (
     <div>
-      <h1 className='header'>Películas</h1>
-      <MovieForm />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/form" element={<MovieFormPage />} />
+          <Route path="/Movies" element={<MovieListPage />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
