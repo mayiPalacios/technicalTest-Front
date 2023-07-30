@@ -3,6 +3,9 @@ import styled from "styled-components";
 import { handleSubmit } from "../api/Api";
 import { v4 as uuidv4 } from "uuid";
 import MyDatePicker from "./mydatePicker";
+import Loader from "react-loader-spinner";
+import Swal from "sweetalert2";
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 const FormWrapper = styled.div`
   max-width: 400px;
   margin: 0 auto;
@@ -33,6 +36,7 @@ const Button = styled.button`
 
 const MovieForm = () => {
   const [datee, setDate] = useState();
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     id: "",
     name: "",
@@ -54,6 +58,7 @@ const MovieForm = () => {
 
   const handleFormSubmit = async () => {
     try {
+      setLoading(true);
       setFormData({ ...formData, id: uuidv4() });
       setFormData({ ...formData, date: datee });
 
@@ -64,9 +69,27 @@ const MovieForm = () => {
       form.append("date", formData.date);
       form.append("duration", formData.duration);
       form.append("img", formData.secure__url_img);
-      await handleSubmit(form);
+      const result = await handleSubmit(form);
+      setLoading(false);
+      if (result) {
+        Swal.fire({
+          icon: "success",
+          title: "Success!",
+          text: "Movie submitted successfully.",
+        }).then(() => {
+          window.location.reload(); // Reload the page after clicking "OK"
+        });
+      }
     } catch (error) {
       console.error("Error submitting data:", error);
+      setLoading(false);
+      Swal.fire({
+        icon: "error",
+        title: "Error!",
+        text: "An error occurred while submitting the movie.",
+      }).then(() => {
+        window.location.reload(); // Reload the page after clicking "OK"
+      });
     }
   };
 
@@ -125,7 +148,13 @@ const MovieForm = () => {
                 onChange={handleChange}
               />
             </FormField>
-            <Button onClick={handleFormSubmit}>Guardar</Button>
+            <Button onClick={handleFormSubmit}>
+              {loading ? (
+                <Loader type="ThreeDots" color="#fff" height={18} width={40} />
+              ) : (
+                "Guardar"
+              )}
+            </Button>
           </FormWrapper>
         </div>
       </div>
