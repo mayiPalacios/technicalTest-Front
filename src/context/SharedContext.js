@@ -8,11 +8,18 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     const session = localStorage.getItem("adListToken");
+    const formIsOff = localStorage.getItem("adFormToken");
 
     if (session) {
       setIsOnListM(true);
     } else {
       setIsOnListM(false);
+    }
+
+    if (formIsOff) {
+      setIsOnform(true);
+    } else {
+      setIsOnform(false);
     }
   }, []);
 
@@ -21,6 +28,8 @@ export function AuthProvider({ children }) {
       value={{
         isOnListM,
         setIsOnListM,
+        isOnForm,
+        setIsOnform,
       }}
     >
       {children}
