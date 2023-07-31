@@ -27,10 +27,10 @@ export const getMovieYears = async () => {
   return request;
 };
 
-export const getMoviesByYear = async (year) => {
+export const getMoviesByYear = async (year, limit, offset) => {
   try {
     const request = await get(
-      `${process.env.REACT_APP_API_URL}/api/movies/year/${year}`
+      `${process.env.REACT_APP_API_URL}/api/movies/year/${year}?limit=${limit}&offset=${offset}`
     );
 
     return request;
