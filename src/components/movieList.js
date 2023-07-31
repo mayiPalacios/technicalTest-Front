@@ -195,12 +195,12 @@ const MovieList = () => {
                       </a>
                     </h5>
                     <div className="top d-flex gap-2">
-                      <span>Duration:{movie.duration}</span>
+                      <span>Duracion:{movie.duration}</span>
                       <span className="date">
                         {formatDateString(movie.date)}
                       </span>
                     </div>
-                    <span>budget:{movie.budget}</span>
+                    <span>Presupuesto:{movie.budget}</span>
                   </div>
                 </div>
               </div>

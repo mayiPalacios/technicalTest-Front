@@ -97,7 +97,7 @@ const MovieForm = () => {
         Swal.fire({
           icon: "success",
           title: "Success!",
-          text: "Movie submitted successfully.",
+          text: "La película fue guardada correctamente",
         }).then(() => {
           window.location.reload(); // Reload the page after clicking "OK"
         });
@@ -116,7 +116,7 @@ const MovieForm = () => {
         Swal.fire({
           icon: "error",
           title: "Error!",
-          text: "An error occurred while submitting the movie.",
+          text: "La película no pudo ser guardada",
         }).then(() => {
           window.location.reload(); // Reload the page after clicking "OK"
         });
