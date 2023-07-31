@@ -36,11 +36,11 @@ const Sidebar = (props) => {
                 option.map((op) => (
                   <li className="nav-item">
                     {!isOnForm ? (
-                      op.name === "formulario" ? (
+                      op.option_name === "Formulario" ? (
                         <a href="/form" className="nav-link align-middle px-0">
                           <i className="fs-4 bi bi-file-earmark-text"></i>
                           <span className="ms-1 d-none d-sm-inline">
-                            {op.name}
+                            {op.option_name}
                           </span>
                         </a>
                       ) : (
@@ -50,25 +50,25 @@ const Sidebar = (props) => {
                       ""
                     )}
 
-                    {op.name === "administrar opciones" ? (
+                    {op.option_name === "Administrar opciones" ? (
                       <a href="/admi" className="nav-link align-middle px-0">
                         <i className="fs-4 bi bi-gear"></i>
                         <span className="ms-1 d-none d-sm-inline">
-                          {op.name}
+                          {op.option_name}
                         </span>
                       </a>
                     ) : (
                       ""
                     )}
                     {!isOn ? (
-                      op.name === "listado de peliculas" ? (
+                      op.option_name === "Listado de peliculas" ? (
                         <a
                           href="/Movies"
                           className="nav-link align-middle px-0"
                         >
                           <i className="fs-4 bi bi-film"></i>
                           <span className="ms-1 d-none d-sm-inline">
-                            {op.name}
+                            {op.option_name}
                           </span>
                         </a>
                       ) : (

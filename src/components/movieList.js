@@ -191,7 +191,7 @@ const MovieList = () => {
                         style={{ textDecoration: "none", color: "#fff" }}
                         href="#"
                       >
-                        {movie.name}
+                        {movie.movie_name}
                       </a>
                     </h5>
                     <div className="top d-flex gap-2">
