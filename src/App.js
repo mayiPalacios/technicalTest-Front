@@ -10,6 +10,7 @@ function App() {
     <div>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<MovieFormPage />} />
           <Route path="/form" element={<MovieFormPage />} />
           <Route path="/Movies" element={<MovieListPage />} />
           <Route path="/admi" element={<AdmiOptionPage />} />
