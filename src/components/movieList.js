@@ -140,7 +140,7 @@ const MovieList = () => {
       >
         <div>
           <select
-            className="form-select selt__btn mb-4"
+            className="form-select selt__btn mb-4 select__year"
             aria-label="Default select example"
             value={selectedYear}
             onChange={(e) => {
@@ -174,10 +174,10 @@ const MovieList = () => {
                   style={{
                     width: "100%",
                     backgroundColor: "black",
-                    color: "#e4d804",
+                    color: "#0d6efd",
                   }}
                 >
-                  <a href="*">
+                  <a href="#">
                     <img
                       style={{ height: "52vh" }}
                       src={movie.secure__url_img}
@@ -189,7 +189,7 @@ const MovieList = () => {
                     <h5 className="title">
                       <a
                         style={{ textDecoration: "none", color: "#fff" }}
-                        href="movie-details.html"
+                        href="#"
                       >
                         {movie.name}
                       </a>

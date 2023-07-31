@@ -44,6 +44,7 @@ const Admioption = () => {
           className="card-body d-flex flex-column gap-3 justify-content-center align-items-center "
           style={{ width: "100%", height: "100%" }}
         >
+          <h6>Habilitar/deshabilitar opciones</h6>
           <div className="d-flex gap-2">
             <div
               className={`switch ${isOnListM ? "on" : ""} `}

@@ -132,13 +132,14 @@ const MovieForm = () => {
 
   return (
     <div>
-      <div className="card__form">
+      <div className="card__form ">
         <div className="card-body">
           <h1 className="header">Agregar pelicula</h1>
           <FormWrapper>
             <FormField>
               <Label>Nombre:</Label>
               <Input
+                className="form-control border "
                 type="text"
                 name="name"
                 value={formData.name}
@@ -150,6 +151,7 @@ const MovieForm = () => {
             <FormField>
               <Label>Imagen:</Label>
               <Input
+                className="form-control border "
                 type="file"
                 name="img"
                 accept=".jpg, .jpeg, .png"
@@ -168,6 +170,7 @@ const MovieForm = () => {
             <FormField>
               <Label>Duración (minutos):</Label>
               <Input
+                className="form-control border "
                 type="number"
                 name="duration"
                 value={formData.duration}
@@ -181,6 +184,7 @@ const MovieForm = () => {
             <FormField>
               <Label>Presupuesto:</Label>
               <Input
+                className="form-control border "
                 type="number"
                 name="budget"
                 value={formData.budget}
