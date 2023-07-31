@@ -19,7 +19,7 @@ const MyDatePicker = ({ setData }) => {
 
   return (
     <div className="form-group d-flex flex-column ">
-      <label>Select Date: </label>
+      <label>Selecciona la fecha </label>
       <DatePicker
         className="form-control border datePick "
         selected={selectedDate}
