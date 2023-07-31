@@ -20,6 +20,9 @@ const MovieList = () => {
 
       setYears(reqYear.years);
       let response = undefined;
+      if (selectedYear === "") {
+        cases = "";
+      }
       switch (cases) {
         case "":
           response = await getMovies(limit, offset);
@@ -30,8 +33,9 @@ const MovieList = () => {
           break;
 
         case "year":
-          response = await getMoviesByYear(selectedYear);
-          setMovies(response);
+          response = await getMoviesByYear(selectedYear, limit, offset);
+          setMovies(response.movies);
+          setTotalItems(response.total);
           break;
         default:
           response = await getMovies(limit, offset);
@@ -144,7 +148,9 @@ const MovieList = () => {
               getCaseYear();
             }}
           >
-            <option selected>Release Year</option>
+            <option selected value="">
+              Release Year
+            </option>
             {years &&
               years.map((year) => (
                 <option key={year} value={year}>
