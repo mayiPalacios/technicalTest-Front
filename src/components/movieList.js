@@ -54,7 +54,7 @@ const MovieList = () => {
       return;
     }
 
-    if (newOffset > totalItems) {
+    if (newOffset >= totalItems) {
       return;
     }
     setOffset(newOffset);
