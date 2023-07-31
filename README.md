@@ -1,7 +1,10 @@
 # TalleresT React App
 
-### 1. Instalar dependencias
-### `npm install`
-***
-### 2. Iniciar el proyecto
-### `npm start`
+# Steps to run the project
+ First need to install npm requeriments
+
+     npm i
+
+then to run locally the project we need to run 
+
+    npm start
