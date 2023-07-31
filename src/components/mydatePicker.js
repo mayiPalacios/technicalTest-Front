@@ -21,7 +21,7 @@ const MyDatePicker = ({ setData }) => {
     <div className="form-group d-flex flex-column ">
       <label>Select Date: </label>
       <DatePicker
-        className="datePick"
+        className="form-control border datePick "
         selected={selectedDate}
         onChange={handleDateChange}
         dateFormat="MM/dd/yyyy"

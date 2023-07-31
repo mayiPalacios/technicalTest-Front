@@ -1,4 +1,5 @@
 @import "./components/cardsMovie";
+@import "./components/switchBtn";
 
 label {
   margin-left: 20px;
@@ -12,7 +13,7 @@ label {
 }
 
 body {
-  background-color: #6b6bcf;
+  background-color: #050505;
 }
 
 .datePick {
@@ -25,15 +26,28 @@ body {
   width: 100%;
   background-color: var(--color);
   border-radius: 1rem;
-  box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1rem 1rem rgba(209, 57, 57, 0.2);
   margin: 2rem;
   padding: 1.6em 2.3em;
   overflow: hidden;
   max-width: 90rem;
   width: auto;
-  background-color: #fff;
+  background-color: #e8eaea;
   min-height: 50rem;
   height: auto;
   display: grid;
   gap: 2.5em;
+}
+
+.alert__err {
+  color: red;
+}
+
+.sidebar {
+  background-color: #25303b;
+}
+
+.select__year {
+  min-width: 102px;
+  width: 102px;
 }
