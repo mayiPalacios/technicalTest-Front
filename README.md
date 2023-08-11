@@ -1,4 +1,4 @@
-# TalleresT React App
+# React App
 
 # Steps to run the project
  First need to install npm requeriments
